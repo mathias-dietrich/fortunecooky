@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: fortunecooky
-          image: fortunecooky:latest
+          image: matd/fortunecooky:latest
           ports:
             - containerPort: 5000
