@@ -5,7 +5,7 @@ kind: Service
 metadata:
   name: fortunecooky-svc
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: fortunecooky
   ports:
