@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-rest-hello-world-deploy
+  name: fortunecooky-deploy
   labels:
     type: restapi
 spec:
   selector: 
     matchLabels:
-      app: flask-rest-hello-world
+      app: fortunecooky
   replicas: 3
   template:
     metadata:
-      name: flask-rest-hello-world-tmpl
+      name: fortunecooky-tmpl
       labels:
-        app: flask-rest-hello-world
+        app: fortunecooky
     spec:
       containers:
-        - name: flask-rest-hello-world
-          image: flask-rest-hello-world:latest
+        - name: fortunecooky
+          image: fortunecooky:latest
           ports:
             - containerPort: 5000
-            
