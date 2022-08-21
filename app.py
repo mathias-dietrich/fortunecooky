@@ -400,7 +400,7 @@ def next():
             <br/><br/>
             <div class="time">Served by Kubernetes Cluster Singapore</div>
 			微軟正黑體 蘋果儷中黑
-			<div class="time">''' + datetime.now() + '''</div>
+			<div class="time">''' + str(datetime.now()) + '''</div>
         </center>
         </center>
     </body>
