@@ -2,6 +2,7 @@
 
 from flask import Flask, jsonify
 import random
+from datetime import datetime
 
 quotes = [
    'A beautiful, smart, and loving person will be coming into your life.',
@@ -374,9 +375,38 @@ app = Flask(__name__)
 @app.route('/')
 def next():
   c = len (quotes)
-  return jsonify({
-    'fc': random.choice(quotes) 
-  })
+  html = '''
+  <html>
+  <head>
+     <style>
+		body
+		{
+         font-family: 'Hiragino Kaku Gothic Pro', 'WenQuanYi Zen Hei', '微軟正黑體', '蘋果儷中黑', Helvetica, Arial, sans-serif;
+		background-color:#F0F000;
+            font-size:35px;
+        }
+        .cooky{
+            font-size:70px;
+        }
+		.time{
+            font-size:20px;
+        }
+    </style>
+  </head>
+    <body>
+        <center>
+            <h1>Fortune Cookies Singapore</h1>
+            <div class="cooky">''' + random.choice(quotes) + '''</div>
+            <br/><br/>
+            <div class="time">Served by Kubernetes Cluster Singapore</div>
+			微軟正黑體 蘋果儷中黑
+			<div class="time">''' + datetime.now() + '''</div>
+        </center>
+        </center>
+    </body>
+</html>
+'''
+  return html
 
 
 if __name__ == '__main__':
